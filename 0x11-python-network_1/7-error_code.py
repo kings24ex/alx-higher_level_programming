@@ -1,15 +1,16 @@
 #!/usr/bin/python3
+""" Takes in a URL and sends a request to the URL
+and displays the body of the response
 """
-Python script that takes in a URL, sends a request to the URL and manage errors
-"""
-import requests
+
 import sys
+import requests
 
-if __name__ == '__main__':
+if __name__ == "__main__":
+    url = sys.argv[1]
 
-    res = requests.get(sys.argv[1])
-
-    if res.status_code >= 400:
-        print("Error code: {}".format(res.status_code))
+    response = requests.get(url)
+    if response.status_code >= 400:
+        print("Error code: {}".format(response.status_code))
     else:
-        print(res.text)
+        print(response.text)
