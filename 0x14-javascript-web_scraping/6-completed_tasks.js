@@ -24,4 +24,3 @@ request(url, function (err, response, body) {
     console.log('Error code: ' + response.statusCode);
   }
 });
-
